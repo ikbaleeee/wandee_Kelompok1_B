@@ -1,0 +1,21 @@
+
+/* ===== global.css ===== */
+:root {
+  --bg: #0a0f0d;
+  --bg-card: #111a15;
+  --bg-input: #162019;
+  --border: rgba(255, 255, 255, .08);
+  --border-h: rgba(57, 255, 120, .25);
+  --accent: #39ff78;
+  --accent-dark: #28c55a;
+  --text: #e8f0eb;
+  --text-muted: #7a9585;
+  --white: #ffffff;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --transition: 0.25s cubic-bezier(.4, 0, .2, 1);
+  --font-main: 'Inter', sans-serif;
+}
