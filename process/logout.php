@@ -1,13 +1,10 @@
 <?php
 
-session_start();
+// Bridge to AuthController logout
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../app/controllers/AuthController.php';
 
-session_unset();
-
-session_destroy();
-
-header("Location: ../index.php");
-
-exit;
+$auth = new AuthController($conn);
+$auth->logout();
 
 ?>
