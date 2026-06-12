@@ -13,7 +13,6 @@ if(!$conn){
 
 }
 
-// Auto migrate: Tambahkan kolom oauth_provider dan oauth_uid jika belum ada
 $checkProvider = mysqli_query($conn, "SHOW COLUMNS FROM `users` LIKE 'oauth_provider'");
 if (mysqli_num_rows($checkProvider) === 0) {
     mysqli_query($conn, "ALTER TABLE `users` ADD COLUMN `oauth_provider` VARCHAR(50) DEFAULT NULL AFTER `photo`");
