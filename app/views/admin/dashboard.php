@@ -34,7 +34,7 @@
 
       <div class="admin-user">
         <?php if(!empty($user['photo'])) : ?>
-          <img src="/wandee/public/uploads/profile/<?php echo $user['photo']; ?>" alt="Admin">
+          <img src="../uploads/profile/<?php echo $user['photo']; ?>" alt="Admin">
         <?php else : ?>
           <div class="admin-user-empty">
             <i data-lucide="user"></i>
@@ -153,7 +153,6 @@
 </div>
 
 <?php require __DIR__ . '/../partials/logout_modal.php'; ?>
-<?php require __DIR__ . '/../partials/upload_lightbox.php'; ?>
 
 <!-- Chart configuration scripts -->
 <?php
