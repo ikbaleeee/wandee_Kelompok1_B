@@ -1,4 +1,10 @@
 <?php
+/** @var array $dest */
+/** @var array $reviews */
+/** @var array $itineraries */
+/** @var array $facilities */
+/** @var array $facility_icons */
+/** @var bool $isFavorite */
 ?>
 <!DOCTYPE html>
 <html lang="id">
