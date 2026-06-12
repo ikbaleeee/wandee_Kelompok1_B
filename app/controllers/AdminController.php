@@ -141,6 +141,12 @@ class AdminController extends Controller {
                     'ongoing'
                 );
             }
+
+            if($status === 'rejected'){
+                if($booking){
+                    $this->destinationModel->increaseQuota($booking['destination_id'], $booking['total_people']);
+                }
+            }
         }
     }
 
