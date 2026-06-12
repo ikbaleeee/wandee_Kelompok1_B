@@ -5800,3 +5800,231 @@ body.auth-page {
 .btn-delete {
   background: #ef4444;
 }
+
+
+/* Admin Profile Form Specific */
+.profile-grid-margin {
+  margin-bottom: 24px;
+}
+.admin-profile-form-layout {
+  display: grid;
+  gap: 20px;
+}
+.admin-profile-grid-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* User Favorite View Specific */
+.favorite-empty-center {
+  text-align: center;
+}
+.favorite-empty-text {
+  margin-bottom: 16px;
+}
+.favorite-remove-form {
+  margin-top: 16px;
+}
+.btn-full-width {
+  width: 100%;
+}
+
+/* Auth Specific */
+.auth-card-hidden {
+  display: none !important;
+}
+
+.success-alert{
+    background: rgba(60,245,108,.15);
+    border: 1px solid rgba(60,245,108,.3);
+    color: #3CF56C;
+
+    padding: 14px 18px;
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.password-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.password-modal.show{
+    display:flex;
+}
+
+.password-modal-content{
+    width:100%;
+    max-width:450px;
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.password-modal-content h3{
+    margin-bottom:20px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.password-close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ===================================== */
+/* ITINERARY BUILDER FOR ADMIN PANEL */
+/* ===================================== */
+
+.itinerary-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.itinerary-day-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.itinerary-day-card:hover {
+  border-color: rgba(57, 255, 120, 0.25);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.itinerary-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 10px;
+}
+
+.itinerary-day-title {
+  font-weight: 800;
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.btn-remove-day {
+  background: rgba(255, 79, 129, 0.08);
+  border: 1px solid rgba(255, 79, 129, 0.15);
+  color: #ff4f81;
+  font-size: 0.85rem;
+  font-weight: 750;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-remove-day:hover {
+  background: rgba(255, 79, 129, 0.18);
+  border-color: rgba(255, 79, 129, 0.3);
+  transform: translateY(-1px);
+}
+
+.itinerary-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+
+.itinerary-fields .full-width {
+  grid-column: 1 / -1;
+}
+
+.itinerary-fields label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(232, 240, 235, 0.52);
+  margin-bottom: 6px;
+}
+
+.itinerary-fields input,
+.itinerary-fields textarea {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  color: #fff !important;
+  font-size: 0.9rem !important;
+  width: 100%;
+}
+
+.itinerary-fields input:focus,
+.itinerary-fields textarea:focus {
+  border-color: rgba(57, 255, 120, 0.3) !important;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(57, 255, 120, 0.08);
+  border-color: rgba(57, 255, 120, 0.3);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Custom Styles for Improvements */
+.tag-full {
+  background: rgba(255, 79, 129, 0.15) !important;
+  color: #ff4f81 !important;
+  border: 1px solid rgba(255, 79, 129, 0.25) !important;
+}
+
+.detail-full-badge {
+  background: rgba(255, 79, 129, 0.15) !important;
+  color: #ff4f81 !important;
+  border: 1px solid rgba(255, 79, 129, 0.3) !important;
+}
+
+.auth-forgot-link a:hover {
+  text-decoration: underline !important;
+}
+
+.qty-select-wrapper input[type="number"]::-webkit-outer-spin-button,
+.qty-select-wrapper input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: auto;
+  margin: 0;
+}
