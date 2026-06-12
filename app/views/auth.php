@@ -295,3 +295,427 @@
         <p class="sub">
           Buat akun baru sekarang
         </p>
+
+
+
+        <!-- REGISTER FORM -->
+
+
+        <form
+          action="/wandee/auth/register"
+          method="POST">
+
+
+          <input
+            type="hidden"
+            name="action"
+            value="register">
+
+
+
+
+          <!-- NAME -->
+
+
+          <div class="form-group">
+
+
+            <input
+              type="text"
+              class="form-input"
+              name="name"
+              placeholder="Nama Lengkap"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- EMAIL -->
+
+
+          <div class="form-group">
+
+
+            <input
+              type="email"
+              class="form-input"
+              name="email"
+              placeholder="Email"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- PASSWORD -->
+
+
+          <div class="form-group">
+
+
+            <input
+              type="password"
+              class="form-input"
+              name="password"
+              placeholder="Password"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- BUTTON -->
+
+
+          <button
+            class="btn-submit"
+            type="submit">
+
+
+            Daftar
+
+
+          </button>
+
+
+        </form>
+
+
+
+
+
+
+        <!-- SWITCH -->
+
+
+        <p class="auth-footer-link">
+
+
+          Sudah punya akun?
+
+
+          <a href="#" id="showLoginText">
+
+
+            Masuk sekarang
+
+
+          </a>
+
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <!-- FORGOT PANEL -->
+
+
+    <div class="auth-card auth-card-hidden" id="forgotPanel">
+
+
+      <!-- LEFT -->
+
+
+      <div class="auth-left">
+
+
+        <div class="auth-left-text">
+
+
+          <h2>
+
+
+            Atur ulang sandi akun Anda.
+
+
+          </h2>
+
+
+          <p>
+
+
+            Masukkan email terdaftar dan buat password baru Anda di Wandee.
+
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+      <!-- RIGHT -->
+
+
+      <div class="auth-right">
+
+
+        <a
+          href="#"
+          class="auth-back"
+          id="showLoginFromForgot">
+
+
+          <i data-lucide="arrow-left"></i>
+
+
+          Kembali ke Masuk
+
+
+        </a>
+
+
+
+
+
+
+        <h1>
+
+
+          Reset Password
+
+
+        </h1>
+
+
+
+
+
+
+        <p class="sub">
+
+
+          Perbarui password akun Anda
+
+
+        </p>
+
+
+
+
+
+
+        <!-- FORGOT FORM -->
+
+
+        <form
+          action="/wandee/auth/reset_password"
+          method="POST">
+
+
+
+
+
+
+          <!-- EMAIL -->
+
+
+          <div class="form-group">
+
+
+            <span class="form-icon">
+
+
+              <i data-lucide="mail"></i>
+
+
+            </span>
+
+
+            <input
+              type="email"
+              class="form-input"
+              name="email"
+              placeholder="Email Terdaftar"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- NEW PASSWORD -->
+
+
+          <div class="form-group">
+
+
+            <span class="form-icon">
+
+
+              <i data-lucide="lock-keyhole"></i>
+
+
+            </span>
+
+
+            <input
+              type="password"
+              class="form-input"
+              name="password"
+              placeholder="Password Baru"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- CONFIRM PASSWORD -->
+
+
+          <div class="form-group">
+
+
+            <span class="form-icon">
+
+
+              <i data-lucide="lock-keyhole"></i>
+
+
+            </span>
+
+
+            <input
+              type="password"
+              class="form-input"
+              name="confirm_password"
+              placeholder="Konfirmasi Password Baru"
+              required>
+
+
+          </div>
+
+
+
+
+
+
+          <!-- BUTTON -->
+
+
+          <button
+            class="btn-submit"
+            type="submit">
+
+
+            Reset Password
+
+
+          </button>
+
+
+
+
+
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  <?php require __DIR__ . '/partials/footer.php'; ?>
+
+
+  <!-- JS -->
+
+
+  <script src="/wandee/public/assets/js/script.js?v=<?= time() ?>"></script>
+
+
+  <script>
+    lucide.createIcons();
+
+
+    const authErrorPopup = document.getElementById('authErrorPopup');
+    const closeAuthErrorPopup = document.getElementById('closeAuthErrorPopup');
+
+
+    if (closeAuthErrorPopup && authErrorPopup) {
+      closeAuthErrorPopup.addEventListener('click', function() {
+        authErrorPopup.classList.remove('is-open');
+      });
+    }
+
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && authErrorPopup?.classList.contains('is-open')) {
+        authErrorPopup.classList.remove('is-open');
+      }
+    });
+
+
+    // Login/Register/Forgot transitions
+    const showForgotBtn = document.getElementById('showForgot');
+    const showLoginFromForgotBtn = document.getElementById('showLoginFromForgot');
+    const loginPanelEl = document.getElementById('loginPanel');
+    const registerPanelEl = document.getElementById('registerPanel');
+    const forgotPanelEl = document.getElementById('forgotPanel');
+
+
+    if(showForgotBtn && loginPanelEl && forgotPanelEl){
+      showForgotBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        loginPanelEl.classList.add('auth-card-hidden');
+        registerPanelEl.classList.add('auth-card-hidden');
+        forgotPanelEl.classList.remove('auth-card-hidden');
+      });
+    }
+
+
+    if(showLoginFromForgotBtn && loginPanelEl && forgotPanelEl){
+      showLoginFromForgotBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        forgotPanelEl.classList.add('auth-card-hidden');
+        loginPanelEl.classList.remove('auth-card-hidden');
+      });
+    }
+  </script>
+
+
+</body>
+</html>
+
