@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Jika diakses di hosting (bukan localhost), bersihkan path /wandee/ jika ada
+  RewriteCond %{HTTP_HOST} !^localhost [NC]
+  RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
+  RewriteCond %{REQUEST_URI} ^/wandee/(.*)$
+  RewriteRule ^wandee/(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Jangan rewrite file atau direktori yang ada
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Arahkan semua request non-file ke public/index.php
+  RewriteRule ^(.*)$ public/index.php [L,QSA]
+</IfModule>
